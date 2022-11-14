@@ -10,10 +10,16 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        main.iterFunction(0.0,3.0,0.004);
         for (int i = 0; i < main.getX().length; i++) {
             System.out.printf("i = %d, X = %f, Y = %f\n", i, main.getX()[i], main.getY()[i]);
         }
+    }
+    public Main() {
+        iterFunction(0.0,3.0,0.004);
+    }
+
+    public Main(double start, double end, double delta) {
+        iterFunction(start, end, delta);
     }
     public double function(double x) {
         if (x <= 0.7) return 1;
@@ -22,11 +28,11 @@ public class Main {
     }
 
     public int calculateSteps(double start, double end, double delta) {
-        return (int) ((end - start) / delta) + 1;
+        return (int) ((end - start) / delta) + 1; //[start, end]
     }
 
     public void iterFunction(double start, double end, double delta) {
-        int size = calculateSteps(start, end, delta); //[start, end]
+        int size = calculateSteps(start, end, delta);
         X = new double[size];
         Y = new double[size];
 
@@ -49,7 +55,7 @@ public class Main {
     }
 
     public double averageY() {
-        return sumY() / Y.length;
+        return sumY() / (Y.length - 1);
     }
     public double getMaxY() {
         int index = 0;
