@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import static java.lang.Math.*;
+
 public class MainTest {
     private static Main main;
 
@@ -17,7 +19,7 @@ public class MainTest {
     void testFunction() {
         double x = 1.1;
         double expected = -0.025042574520726175;
-
+        
         assertEquals(expected, main.function(x),0.001);
     }
 
