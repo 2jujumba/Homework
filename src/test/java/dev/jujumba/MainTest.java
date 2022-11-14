@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import static java.lang.Math.*;
-
 public class MainTest {
     private static Main main;
 
@@ -18,19 +16,14 @@ public class MainTest {
     @Test
     void testFunction() {
         double x = 1.1;
-        double expected = -0.5 * pow(x, 2) * log10(x);
-        /*
-        По-моему, это не правильный подход, я считаю дважды по одной и той же формуле.
-        То есть, это тест всегда будет проходить.
+        double expected = -0.025042574520726175;
 
-        Или мне не следовало считать значение в коде а рассчитать значение в калькуляторе?
-         */
         assertEquals(expected, main.function(x),0.001);
     }
 
     @Test
     void testCalculateSteps() {
-        int expected = 750; //посчитал на калькуляторе
+        int expected = 750;
         assertEquals(expected, main.calculateSteps(0.0,3.0,0.004),0.001);
     }
     @Test
