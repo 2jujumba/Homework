@@ -35,8 +35,6 @@ public class MainTest {
     }
     @Test
     void testIterFunction() {
-        main.iterFunction(0.0,3.0,0.004);
-
         assertEquals(0.7, main.getX()[175],0.001);
         assertEquals(0.037, main.getY()[175],0.001);
 
