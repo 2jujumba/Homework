@@ -22,11 +22,11 @@ public class Main {
     }
 
     public int calculateSteps(double start, double end, double delta) {
-        return (int) ((end - start) / delta);
+        return (int) ((end - start) / delta) + 1;
     }
 
     public void iterFunction(double start, double end, double delta) {
-        int size = calculateSteps(start, end, delta) + 1; //[start, end]
+        int size = calculateSteps(start, end, delta); //[start, end]
         X = new double[size];
         Y = new double[size];
 
